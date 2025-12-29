@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button"
 
 export default function Home() {
   return (
@@ -12,6 +14,9 @@ export default function Home() {
           height={20}
           priority
         />
+        <Button asChild>
+          <Link href="/test">Go to Test Page</Link>
+        </Button>
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
             To get started, edit the page.tsx file.
@@ -21,6 +26,8 @@ export default function Home() {
             <a
               href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
               className="font-medium text-zinc-950 dark:text-zinc-50"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Templates
             </a>{" "}
@@ -28,6 +35,8 @@ export default function Home() {
             <a
               href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
               className="font-medium text-zinc-950 dark:text-zinc-50"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Learning
             </a>{" "}
