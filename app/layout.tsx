@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-gradient-to-br from-gray-50 to-gray-100`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-linear-to-br from-gray-50 to-gray-100`}>
         <Navbar />
         <main className="container mx-auto py-12 px-4">
           {children}
