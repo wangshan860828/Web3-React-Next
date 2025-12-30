@@ -1,6 +1,7 @@
 'use client'
 import { useDisconnect, useAppKit, useAppKitNetwork  } from '@reown/appkit/react'
 import { networks } from '../config'
+import { Button } from "@/components/ui/button"
 
 export const ActionButtonList = () => {
     const { disconnect } = useDisconnect();
@@ -16,9 +17,9 @@ export const ActionButtonList = () => {
     }
   return (
     <div>
-        <button onClick={() => open()}>Open</button>
-        <button onClick={handleDisconnect}>Disconnect</button>
-        <button onClick={() => switchNetwork(networks[1]) }>Switch</button>
+        <Button className="mr-2" onClick={() => open()}>Open</Button>
+        <Button className="mr-2" onClick={handleDisconnect}>Disconnect</Button>
+        <Button className="mr-2" onClick={() => switchNetwork(networks[1]) }>Switch</Button>
     </div>
   )
 }

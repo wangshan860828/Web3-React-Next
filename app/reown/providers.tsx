@@ -13,7 +13,7 @@ const queryClient = new QueryClient()
 const metadata = {
   name: 'next-reown-appkit',
   description: 'next-reown-appkit',
-  url: 'http://localhost:3001', // 本地开发环境URL
+  url: 'http://localhost:3000', // 本地开发环境URL
   icons: ['https://avatars.githubusercontent.com/u/179229932']
 }
 
