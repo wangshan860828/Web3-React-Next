@@ -1,6 +1,5 @@
 // Server Component section - all server-related code
 import { cookies } from 'next/headers'
-import ContextProvider from '@/reown-context' // 使用默认导入
 import SideNavLayoutClient, { NavItem } from '@/components/layout/SideNavLayoutClient'
 
 export const metadata = {
@@ -24,11 +23,8 @@ export default async function ReownLayout({ children }: { children: React.ReactN
   ]
 
   return (
-    <ContextProvider cookies={wagmiCookie}>
-      {/* 使用通用的侧边导航布局组件 */}
-      <SideNavLayoutClient navItems={navItems}>
-        {children}
-      </SideNavLayoutClient>
-    </ContextProvider>
+    <SideNavLayoutClient navItems={navItems}>
+      {children}
+    </SideNavLayoutClient>
   )
 }
