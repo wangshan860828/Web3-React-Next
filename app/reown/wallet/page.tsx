@@ -1,17 +1,17 @@
 // import { cookieStorage, createStorage, http } from '@wagmi/core'
-import { ConnectButton } from "@/components/common/ConnectButton";
+// import { ConnectButton } from "@/components/common/ConnectButton";
 import { InfoList } from "../components/InfoList";
 import { ActionButtonList } from "../components/ActionButtonList";
 
 export default function WalletPage() {
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-4">
       <h1 className="text-2xl font-bold">AppKit Wagmi Next.js App Router Example</h1>
 
-      <ConnectButton />
+      {/* <ConnectButton />
       
-      <div className="border-b border-gray-300 my-4"></div>
+      <div className="border-b border-gray-300 my-4"></div> */}
       
       <ActionButtonList />
       
