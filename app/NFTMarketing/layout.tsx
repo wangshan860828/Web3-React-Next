@@ -1,5 +1,5 @@
 import { cookies } from 'next/headers'
-import ContextProvider from '@/reown-context'
+import ContextProvider from '@/context'
 import SideNavLayoutClient, { NavItem } from '@/components/layout/SideNavLayoutClient'
 
 export const metadata = {

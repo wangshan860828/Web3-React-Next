@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/navbar";
-import ContextProvider from "@/reown-context";
+import ContextProvider from "@/context";
+import { headers } from 'next/headers';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,10 +25,12 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersData = await headers();
+  const cookies = headersData.get('cookie');
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-linear-to-br from-gray-50 to-gray-100`}>
-        <ContextProvider cookies={null}>
+        <ContextProvider cookies={cookies}>
           <Navbar />
           <main className="container mx-auto py-12 px-4">
             {children}

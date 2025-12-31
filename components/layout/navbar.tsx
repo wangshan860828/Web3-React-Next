@@ -11,8 +11,6 @@ import {
 } from "@/components/ui/navigation-menu"
 import { ConnectButton } from "@/components/common/ConnectButton";
 
-
-
 export default function Navbar() {
   const pathname = usePathname()
 
@@ -32,23 +30,13 @@ export default function Navbar() {
           <div className="flex items-center ml-[40px]">
             <NavigationMenu viewport={false}>
               <NavigationMenuList className="flex-wrap justify-start">
-                {/* About Menu Item */}
+                {/* NFTMarketing Menu Item */}
                 <NavigationMenuItem>
                   <Link 
-                    href="/about" 
-                    className={`inline-flex items-center justify-center px-6 py-2 rounded-lg text-sm font-medium text-decoration-none transition-all duration-300 ${isActive("/about") ? 'bg-gray-300 text-blue-600' : 'text-gray-900 hover:bg-gray-300 hover:text-blue-600 active:text-blue-600'}`}
+                    href="/NFTMarketing" 
+                    className={`inline-flex items-center justify-center px-6 py-2 rounded-lg text-sm font-medium text-decoration-none transition-all duration-300 ${isActive("/NFTMarketing") ? 'bg-gray-300 text-blue-600' : 'text-gray-900 hover:bg-gray-300 hover:text-blue-600 active:text-blue-600'}`}
                   >
-                    About
-                  </Link>
-                </NavigationMenuItem>
-
-                {/* Test Menu Item */}
-                <NavigationMenuItem>
-                  <Link 
-                    href="/test" 
-                    className={`inline-flex items-center justify-center px-6 py-2 rounded-lg text-sm font-medium text-decoration-none transition-all duration-300 ${isActive("/test") ? 'bg-gray-300 text-blue-600' : 'text-gray-900 hover:bg-gray-300 hover:text-blue-600 active:text-blue-600'}`}
-                  >
-                    Test
+                    NFTMarketing
                   </Link>
                 </NavigationMenuItem>
 
@@ -62,15 +50,7 @@ export default function Navbar() {
                   </Link>
                 </NavigationMenuItem>
 
-                {/* NFTMarketing Menu Item */}
-                <NavigationMenuItem>
-                  <Link 
-                    href="/NFTMarketing" 
-                    className={`inline-flex items-center justify-center px-6 py-2 rounded-lg text-sm font-medium text-decoration-none transition-all duration-300 ${isActive("/NFTMarketing") ? 'bg-gray-300 text-blue-600' : 'text-gray-900 hover:bg-gray-300 hover:text-blue-600 active:text-blue-600'}`}
-                  >
-                    NFTMarketing
-                  </Link>
-                </NavigationMenuItem>
+                
 
                 {/* Wagmi Menu Item with Submenu */}
                 <NavigationMenuItem className="relative">
@@ -91,6 +71,15 @@ export default function Navbar() {
                       </li>
                     </ul>
                   </NavigationMenuContent>
+                </NavigationMenuItem>
+                {/* About Menu Item */}
+                <NavigationMenuItem>
+                  <Link 
+                    href="/about" 
+                    className={`inline-flex items-center justify-center px-6 py-2 rounded-lg text-sm font-medium text-decoration-none transition-all duration-300 ${isActive("/about") ? 'bg-gray-300 text-blue-600' : 'text-gray-900 hover:bg-gray-300 hover:text-blue-600 active:text-blue-600'}`}
+                  >
+                    About
+                  </Link>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>

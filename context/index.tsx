@@ -1,6 +1,6 @@
 'use client'
 
-import { wagmiAdapter, projectId, networks } from '@/reown-config'
+import { wagmiAdapter, projectId, networks } from '@/config'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { createAppKit } from '@reown/appkit/react'
 import React, { type ReactNode } from 'react'
@@ -13,7 +13,7 @@ const queryClient = new QueryClient()
 const metadata = {
   name: 'next-reown-appkit',
   description: 'next-reown-appkit',
-  url: 'http://localhost:3000', // 本地开发环境URL
+  url: 'https://github.com/0xonerb/next-reown-appkit-ssr', // origin must match your domain & subdomain
   icons: ['https://avatars.githubusercontent.com/u/179229932']
 }
 
@@ -33,8 +33,7 @@ export const modal = createAppKit({
 })
 
 function ContextProvider({ children, cookies }: { children: ReactNode; cookies: string | null }) {
-  // 正确处理SSR的初始状态
-  const initialState = cookies ? cookieToInitialState(wagmiAdapter.wagmiConfig as Config, cookies) : undefined
+  const initialState = cookieToInitialState(wagmiAdapter.wagmiConfig as Config, cookies)
 
   return (
     <WagmiProvider config={wagmiAdapter.wagmiConfig as Config} initialState={initialState}>
