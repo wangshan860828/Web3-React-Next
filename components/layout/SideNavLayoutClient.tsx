@@ -3,6 +3,12 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
+// 导航项类型定义
+export interface NavItem {
+  href: string;
+  label: string;
+}
+
 // 导航链接组件 - 在客户端组件中
 function NavLink({
   href,
@@ -28,10 +34,13 @@ function NavLink({
   );
 }
 
-export default function ReownLayoutClient({
+// 通用侧边导航布局组件
+export default function SideNavLayoutClient({
   children,
+  navItems,
 }: {
   children: React.ReactNode;
+  navItems: NavItem[];
 }) {
   return (
     <>
@@ -39,12 +48,11 @@ export default function ReownLayoutClient({
       <aside className="fixed top-16 left-0 w-64 h-[calc(100vh-4rem)] bg-gray-800 text-white p-6 overflow-y-auto z-40">
         <nav>
           <ul className="space-y-4">
-            <li>
-              <NavLink href="/reown/wallet">Wallet</NavLink>
-            </li>
-            <li>
-              <NavLink href="/reown/contract">Contract</NavLink>
-            </li>
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <NavLink href={item.href}>{item.label}</NavLink>
+              </li>
+            ))}
           </ul>
         </nav>
       </aside>

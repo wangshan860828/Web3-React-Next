@@ -56,6 +56,16 @@ export default function Navbar() {
               </Link>
             </NavigationMenuItem>
 
+            {/* NFTMarketing Menu Item */}
+            <NavigationMenuItem>
+              <Link 
+                href="/NFTMarketing" 
+                className={`inline-flex items-center justify-center px-6 py-2 rounded-lg text-sm font-medium text-decoration-none transition-all duration-300 ${isActive("/NFTMarketing") ? 'bg-gray-300 text-blue-600' : 'text-gray-900 hover:bg-gray-300 hover:text-blue-600 active:text-blue-600'}`}
+              >
+                NFTMarketing
+              </Link>
+            </NavigationMenuItem>
+
             {/* Wagmi Menu Item with Submenu */}
             <NavigationMenuItem className="relative">
               <NavigationMenuTrigger className={`inline-flex items-center justify-center px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${isActive("/wagmi") ? 'bg-gray-300 text-blue-600' : 'text-gray-900 hover:bg-gray-300 hover:text-blue-600 active:text-blue-600'}`}>

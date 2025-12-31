@@ -1,6 +1,6 @@
 'use client'
 import { useDisconnect, useAppKit, useAppKitNetwork  } from '@reown/appkit/react'
-import { networks } from '../config'
+import { networks } from '@/reown-config'
 import { Button } from "@/components/ui/button"
 
 export const ActionButtonList = () => {

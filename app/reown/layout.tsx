@@ -1,7 +1,7 @@
 // Server Component section - all server-related code
 import { cookies } from 'next/headers'
-import ContextProvider from './providers' // 使用默认导入
-import ReownLayoutClient from './components/ReownLayoutClient'
+import ContextProvider from '@/reown-context' // 使用默认导入
+import SideNavLayoutClient, { NavItem } from '@/components/layout/SideNavLayoutClient'
 
 export const metadata = {
   title: "AppKit in Next.js + wagmi",
@@ -17,12 +17,18 @@ export default async function ReownLayout({ children }: { children: React.ReactN
   
   console.log('Wagmi Cookie (server-side):', wagmiCookie)
 
+  // 定义 Reown 模块的导航项
+  const navItems: NavItem[] = [
+    { href: '/reown/wallet', label: 'Wallet' },
+    { href: '/reown/contract', label: 'Contract' },
+  ]
+
   return (
     <ContextProvider cookies={wagmiCookie}>
-      {/* 使用客户端布局组件 */}
-      <ReownLayoutClient>
+      {/* 使用通用的侧边导航布局组件 */}
+      <SideNavLayoutClient navItems={navItems}>
         {children}
-      </ReownLayoutClient>
+      </SideNavLayoutClient>
     </ContextProvider>
   )
 }
