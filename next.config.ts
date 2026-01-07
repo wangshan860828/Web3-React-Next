@@ -1,6 +1,18 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  // 移除无效的turbopack配置
-}
+import type { NextConfig } from "next";
 
-export default nextConfig
+const nextConfig: NextConfig = {
+  webpack: config => {
+    config.externals.push('pino-pretty', 'lokijs', 'encoding', 'porto')
+    return config
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'salmon-fashionable-elk-908.mypinata.cloud',
+      },
+    ],
+  },
+};
+
+export default nextConfig;
