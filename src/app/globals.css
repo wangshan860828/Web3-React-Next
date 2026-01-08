@@ -123,3 +123,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+body {
+  padding-top: 60px;
+  overflow-x: hidden;
+}
+

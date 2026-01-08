@@ -7,7 +7,7 @@ import Image from 'next/image';
 export default function Home() {
 
   return (
-    <div className={"pages"}>
+    <div className={"page bg-green-300"}>
       <Image src="/reown.svg" alt="Reown" width={150} height={150} priority />
       <h1>AppKit Wagmi Next.js App Router Example</h1>
 

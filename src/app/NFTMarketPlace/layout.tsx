@@ -1,4 +1,5 @@
-import SideNavLayoutClient from '@/components/layout/SideNavLayoutClient'
+import SideNavLayoutClient from '@/components/layout/SideNavLayoutClient';
+import bgImage from '@/assert/images/bg.png';
 
 export default function NFTMarketPlaceLayout({
   children,
@@ -11,5 +12,15 @@ export default function NFTMarketPlaceLayout({
     { href: '/NFTMarketPlace/profile', label: 'profile' },
   ]
 
-  return <SideNavLayoutClient navItems={navItems}>{children}</SideNavLayoutClient>
+  return (
+    <div className="pl-64">
+      <SideNavLayoutClient navItems={navItems} />
+      <main 
+        className="flex-1 h-[calc(100vh-60px)] overflow-y-auto"
+        style={{ backgroundImage: `url(${bgImage.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      >
+        {children}
+      </main>
+    </div>
+  )
 }
